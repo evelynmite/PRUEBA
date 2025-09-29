@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kéfir Ecuador | Búlgaros de Leche Naturales</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Variables CSS con colores de Ecuador */
+        :root {
+            --primary-color: #FFD100; /* Amarillo de la bandera */
+            --secondary-color: #034EA2; /* Azul de la bandera */
+            --accent-color: #ED1C24; /* Rojo de la bandera */
+            --dark-color: #117A65; /* Verde andino */
+            --light-color: #F8F9FA;
+            --text-color: #2C3E50;
+            --text-light: #fff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        /* Reset y estilos base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            transform: translateY(-2px);
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            padding: 15px 20px;
+            box-shadow: var(--shadow);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-color);
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(to right, var(--secondary-color), var(--primary-color), var(--accent-color));
+            color: var(--text-light);
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo-flag {
+            display: flex;
+            height: 25px;
+            width: 35px;
+            overflow: hidden;
+            border-radius: 2px;
+            box-shadow: 0 0 3px rgba(0,0,0,0.3);
+        }
+
+        .flag-stripe {
+            height: 100%;
+            width: 33.33%;
+        }
+
+        .flag-yellow {
+            background-color: var(--primary-color);
+        }
+
+        .flag-blue {
+            background-color: var(--secondary-color);
+        }
+
+        .flag-red {
+            background-color: var(--accent-color);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            transition: var(--transition);
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(3, 78, 162, 0.8), rgba(3, 78, 162, 0.8)), url('https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--text-light);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Products Section */
+        .products {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-info h3 {
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            margin: 10px 0;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: var(--light-color);
+            border-radius: 10px;
+            transition: var(--transition);
+            border-top: 4px solid var(--primary-color);
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .benefit-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--light-color);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .testimonial-card:before {
+            content: '"';
+            font-size: 5rem;
+            color: var(--primary-color);
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            opacity: 0.3;
+            line-height: 1;
+        }
+
+        .testimonial-content {
+            margin-bottom: 20px;
+            font-style: italic;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--secondary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+
+        .author-info h4 {
+            margin-bottom: 5px;
+        }
+
+        .author-info p {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 15px 20px;
+            background-color: var(--light-color);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 500px;
+        }
+
+        /* Delivery Section */
+        .delivery {
+            padding: 80px 0;
+            background: linear-gradient(to right, var(--secondary-color), var(--dark-color));
+            color: var(--text-light);
+        }
+
+        .delivery-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .delivery-text h2 {
+            margin-bottom: 20px;
+        }
+
+        .delivery-text ul {
+            margin: 20px 0;
+        }
+
+        .delivery-text li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .delivery-map {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 300px;
+            background-color: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-color);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 0;
+            background: linear-gradient(rgba(3, 78, 162, 0.9), rgba(3, 78, 162, 0.9)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .contact p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: var(--text-light);
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: linear-gradient(to bottom, var(--secondary-color), var(--primary-color), var(--accent-color));
+                padding: 20px;
+                box-shadow: var(--shadow);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about-content, .delivery-content {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/593993707353?text=Hola,%20estoy%20interesado%20en%20sus%20productos%20de%20kéfir%20ecuatoriano" class="btn btn-whatsapp" target="_blank">
+        <i class="fab fa-whatsapp"></i> Contáctanos
+    </a>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-flag">
+                    <div class="flag-stripe flag-yellow"></div>
+                    <div class="flag-stripe flag-blue"></div>
+                    <div class="flag-stripe flag-red"></div>
+                </div>
+                <span>Kéfir Ecuador</span>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#beneficios">Beneficios</a></li>
+                    <li><a href="#testimonios">Testimonios</a></li>
+                    <li><a href="#envios">Envíos</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <h1>Kéfir y Búlgaros de Leche 100% Ecuatorianos</h1>
+            <p>Descubre el poder probiótico de nuestros productos artesanales, elaborados con la mejor leche de los Andes ecuatorianos para tu bienestar.</p>
+            <div class="hero-buttons">
+                <a href="#productos" class="btn">Ver Productos</a>
+                <a href="#beneficios" class="btn" style="background-color: var(--accent-color); color: white;">Conoce los Beneficios</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>Kéfir Ecuatoriano: Tradición y Salud</h2>
+                    <p>El kéfir es una bebida fermentada probiótica que ha ganado popularidad en Ecuador por sus múltiples beneficios para la salud. Nuestros búlgaros de leche son cultivados de manera artesanal en los valles andinos, utilizando leche de vaca criolla ecuatoriana.</p>
+                    <p>Esta tradición milenaria ha encontrado un hogar en Ecuador, donde el clima y la calidad de nuestros productos lácteos permiten obtener un kéfir de excelente sabor y propiedades nutricionales.</p>
+                    <p>Nuestros búlgaros de leche son 100% naturales, sin conservantes ni aditivos, garantizando un producto puro y lleno de probióticos beneficiosos para tu flora intestinal.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Kéfir y búlgaros ecuatorianos">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products" id="productos">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros Productos</h2>
+                <p>Ofrecemos búlgaros de leche de la más alta calidad para que prepares tu propio kéfir en casa</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-badge">Más Vendido</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Búlgaros de leche pequeños">
+                    </div>
+                    <div class="product-info">
+                        <h3>Paquete Inicial</h3>
+                        <p>Ideal para comenzar. Incluye búlgaros de leche y guía de preparación en español.</p>
+                        <div class="product-price">$12.00</div>
+                        <a href="https://wa.me/593993707353?text=Hola,%20me%20interesa%20el%20Paquete%20Inicial%20de%20kéfir%20por%20$12" class="btn" target="_blank">Comprar ahora</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1579684947554-1e6d0cef76b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Búlgaros de leche medianos">
+                    </div>
+                    <div class="product-info">
+                        <h3>Paquete Familiar</h3>
+                        <p>Para familias. Mayor cantidad de búlgaros para producción continua.</p>
+                        <div class="product-price">$18.00</div>
+                        <a href="https://wa.me/593993707353?text=Hola,%20me%20interesa%20el%20Paquete%20Familiar%20de%20kéfir%20por%20$18" class="btn" target="_blank">Comprar ahora</a>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Kéfir preparado">
+                    </div>
+                    <div class="product-info">
+                        <h3>Kéfir Listo para Beber</h3>
+                        <p>Kéfir ya fermentado, listo para consumir. Sabores natural, fresa y mora.</p>
+                        <div class="product-price">$5.00 / litro</div>
+                        <a href="https://wa.me/593993707353?text=Hola,%20me%20interesa%20el%20Kéfir%20Listo%20para%20Beber%20por%20$5%20el%20litro" class="btn" target="_blank">Comprar ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits" id="beneficios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Beneficios del Kéfir</h2>
+                <p>Descubre por qué el kéfir es considerado un superalimento para tu salud digestiva y general</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Salud Digestiva</h3>
+                    <p>Mejora la flora intestinal y ayuda en la digestión gracias a sus probióticos naturales.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Sistema Inmunológico</h3>
+                    <p>Fortalece tus defensas naturales contra enfermedades e infecciones.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bone"></i>
+                    </div>
+                    <h3>Huesos Fuertes</h3>
+                    <p>Rico en calcio y vitamina K2, esenciales para la salud ósea.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-allergies"></i>
+                    </div>
+                    <h3>Reduce Intolerancias</h3>
+                    <p>La fermentación reduce la lactosa, haciéndolo más tolerable para muchos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Lo que dicen nuestros clientes</h2>
+                <p>Experiencias reales de ecuatorianos que han mejorado su salud con nuestros productos</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Llevo 6 meses consumiendo kéfir regularmente y he notado una gran mejora en mi digestión. Los búlgaros que compré en Quito siguen produciendo perfectamente. ¡Excelente producto ecuatoriano!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MG</div>
+                        <div class="author-info">
+                            <h4>María González</h4>
+                            <p>Quito, Pichincha</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Excelente producto y atención. Me enviaron los búlgaros a Guayaquil y llegaron en perfecto estado. Ahora toda mi familia disfruta del kéfir casero. ¡100% recomendado!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JR</div>
+                        <div class="author-info">
+                            <h4>Javier Rodríguez</h4>
+                            <p>Guayaquil, Guayas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Tenía problemas de intolerancia a la lactosa pero con el kéfir puedo disfrutar de los beneficios de los lácteos sin molestias. Lo recomiendo a todos mis amigos en Cuenca."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AP</div>
+                        <div class="author-info">
+                            <h4>Ana Pérez</h4>
+                            <p>Cuenca, Azuay</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Section -->
+    <section class="delivery" id="envios">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Envíos a Todo Ecuador</h2>
+                <p style="color: rgba(255,255,255,0.8)">Llevamos nuestros productos a todas las provincias del país</p>
+            </div>
+            <div class="delivery-content">
+                <div class="delivery-text">
+                    <h2>Zonas de Entrega</h2>
+                    <p>Realizamos envíos a todas las provincias de Ecuador mediante servientrega o servicio de mensajería local.</p>
+                    <ul>
+                        <li><i class="fas fa-shipping-fast"></i> Quito y Valle de los Chillos: Entrega en 24 horas</li>
+                        <li><i class="fas fa-shipping-fast"></i> Guayaquil, Cuenca, Ambato: 2-3 días</li>
+                        <li><i class="fas fa-shipping-fast"></i> Otras provincias: 3-5 días</li>
+                        <li><i class="fas fa-truck"></i> Envío gratuito en compras mayores a $30</li>
+                    </ul>
+                    <p>Los búlgaros viajan en condiciones especiales para garantizar su viabilidad al llegar a destino.</p>
+                </div>
+                <div class="delivery-map">
+                    <p>Mapa de zonas de entrega en Ecuador</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-title">
+                <h2>Preguntas Frecuentes</h2>
+                <p>Resolvemos tus dudas sobre el kéfir y nuestros productos</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿Cómo conservo los búlgaros de leche en el clima ecuatoriano?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>En el clima ecuatoriano, especialmente en zonas cálidas como la costa, es importante mantener los búlgaros en un lugar fresco, preferiblemente en la parte menos fría de la nevera. En la sierra, pueden mantenerse a temperatura ambiente.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿El kéfir contiene lactosa?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>El proceso de fermentación reduce significativamente el contenido de lactosa, haciéndolo tolerable para muchas personas con sensibilidad a la lactosa. Sin embargo, no está completamente libre de lactosa.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿Hacen envíos a todas las provincias de Ecuador?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, realizamos envíos a las 24 provincias de Ecuador. Los búlgaros viajan en condiciones especiales para garantizar su viabilidad al llegar a destino, incluso a provincias amazónicas como Pastaza o Morona Santiago.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>¿Aceptan pagos con transferencia bancaria?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sí, aceptamos transferencias a cuentas de bancos ecuatorianos (Pichincha, Produbanco, Guayaquil), así como pagos en efectivo contra entrega en Quito y valle de los Chillos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <h2>¿Listo para mejorar tu salud con kéfir ecuatoriano?</h2>
+            <p>Contáctanos para realizar tu pedido o resolver cualquier duda sobre nuestros productos</p>
+            <a href="https://wa.me/593993707353?text=Hola,%20estoy%20interesado%20en%20sus%20productos%20de%20kéfir%20ecuatoriano" class="btn btn-whatsapp" style="background-color: #25D366; display: inline-flex;" target="_blank">
+                <i class="fab fa-whatsapp"></i> Escríbenos por WhatsApp
+            </a>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h3>Teléfono</h3>
+                    <p>+593 99 370 7353</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>info@kefirecuador.com</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Ubicación</h3>
+                    <p>Quito, Ecuador</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Horario</h3>
+                    <p>Lun-Vie: 8:00-18:00</p>
+                    <p>Sáb: 9:00-14:00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Kéfir Ecuador</h3>
+                    <p>Productores artesanales de búlgaros de leche y kéfir 100% ecuatoriano. Calidad y tradición andina.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Productos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#productos">Búlgaros de Leche</a></li>
+                        <li><a href="#productos">Kéfir Listo para Beber</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Información</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">Sobre Nosotros</a></li>
+                        <li><a href="#faq">Preguntas Frecuentes</a></li>
+                        <li><a href="#envios">Envíos y Entregas</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul class="footer-links">
+                        <li><a href="tel:+59399707353">+593 99 370 7353</a></li>
+                        <li><a href="mailto:info@kefirecuador.com">info@kefirecuador.com</a></li>
+                        <li><a href="#contacto">Formulario de Contacto</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2023 Kéfir Ecuador. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Menu móvil
+        const mobileMenuBtn = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Cierre del menú al hacer clic en un enlace (para móviles)
+        navLinks.addEventListener('click', (e) => {
+            if (e.target.tagName === 'A') {
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Sección activa en el menú (scroll spy)
+        const sections = document.querySelectorAll('section');
+        const navLinksA = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+
+                if (pageYOffset >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinksA.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href') === `#${current}`) {
+                    a.classList.add('active');
+                }
+            });
+        });
+
+        // Asegurarse de que el menú esté cerrado al cargar la página en móviles
+        window.addEventListener('load', () => {
+            navLinks.classList.remove('active');
+        });
+
+        // FAQ acordeón
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', function () {
+                const item = this.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</h
