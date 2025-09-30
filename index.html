@@ -1176,12 +1176,26 @@
                 font-size: 0.8rem;
             }
         }
+
+        @media (max-width: 480px) {
+    .btn-whatsapp {
+        font-size: 2rem;
+        padding: 0;
+        width: 48px;
+        height: 48px;
+        justify-content: center;
+        gap: 0;
+    }
+    .btn-whatsapp span {
+        display: none;
+    }
+}
     </style>
 </head>
 <body>
     <!-- WhatsApp Button -->
     <a href="https://wa.me/593993707353?text=Hola,%20estoy%20interesado%20en%20sus%20productos%20de%20kéfir%20ecuatoriano" class="btn btn-whatsapp" target="_blank">
-        <i class="fab fa-whatsapp"></i> Contáctanos
+        <i class="fab fa-whatsapp"></i> <span>Contáctanos</span>
     </a>
 
     <!-- Header -->
