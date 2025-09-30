@@ -840,23 +840,184 @@
             color: #eee;
         }
 
-        @media (max-width: 480px) {
-            .cart-sidebar {
-                max-width: 100vw;
-                width: 100vw;
-                right: -100vw;
-                padding: 0;
-                border-radius: 0;
-            }
-            .cart-sidebar.active {
-                right: 0;
-            }
-            .cart-header, .cart-footer {
-                padding: 12px;
-            }
-            .cart-items {
-                padding: 10px;
-            }
+        /* Modal de pago simple */
+        .payment-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .payment-modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px 0;
+        }
+
+        .payment-container {
+            background-color: white;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .payment-header {
+            background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .payment-header h3 {
+            margin: 0 0 10px;
+            font-size: 1.5rem;
+        }
+
+        .payment-header p {
+            margin: 0;
+            opacity: 0.9;
+        }
+
+        .payment-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .payment-content {
+            padding: 20px;
+        }
+
+        .payment-summary {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .payment-summary h4 {
+            margin-bottom: 15px;
+            color: var(--secondary-color);
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .payment-form {
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .payment-actions {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .payment-actions .btn {
+            flex: 1;
+            padding: 12px;
+        }
+
+        /* Overlay */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* Ícono del carrito flotante arriba del botón WhatsApp */
+        .cart-icon-floating {
+            position: fixed;
+            bottom: 80px;
+            right: 20px;
+            z-index: 1100;
+            background: var(--primary-color);
+            color: var(--text-color);
+            border-radius: 50%;
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            font-size: 2rem;
+            cursor: pointer;
+            transition: transform 0.3s cubic-bezier(.77,.2,.05,1);
+            animation: cart-bounce 1.5s infinite;
+        }
+
+        @keyframes cart-bounce {
+            0%, 100% { transform: translateY(0);}
+            50% { transform: translateY(-10px);}
+        }
+
+        .cart-count {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            width: 22px;
+            height: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.95rem;
+            font-weight: bold;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.12);
         }
 
         /* Responsive Design */
@@ -905,49 +1066,6 @@
                 width: 95%;
             }
         }
-
-        /* Ícono del carrito flotante arriba del botón WhatsApp */
-        .cart-icon-floating {
-            position: fixed;
-            bottom: 80px;
-            right: 20px;
-            z-index: 1100;
-            background: var(--primary-color);
-            color: var(--text-color);
-            border-radius: 50%;
-            width: 56px;
-            height: 56px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: var(--shadow);
-            font-size: 2rem;
-            cursor: pointer;
-            transition: transform 0.3s cubic-bezier(.77,.2,.05,1);
-            animation: cart-bounce 1.5s infinite;
-        }
-
-        @keyframes cart-bounce {
-            0%, 100% { transform: translateY(0);}
-            50% { transform: translateY(-10px);}
-        }
-
-        .cart-count {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            background-color: var(--accent-color);
-            color: white;
-            border-radius: 50%;
-            width: 22px;
-            height: 22px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.95rem;
-            font-weight: bold;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.12);
-        }
     </style>
 </head>
 <body>
@@ -973,8 +1091,8 @@
                     <li><a href="#productos">Productos</a></li>
                     <li><a href="#beneficios">Beneficios</a></li>
                     <li><a href="#testimonios">Testimonios</a></li>
-                    <li><a href="#delivery">Envíos</a></li> <!-- Cambia #envios por #delivery -->
-                    <li><a href="#contact">Contacto</a> <!-- Cambia #contacto por #contact -->
+                    <li><a href="#delivery">Envíos</a></li>
+                    <li><a href="#contact">Contacto</a></li>
                 </ul>
                 <div class="mobile-menu">
                     <i class="fas fa-bars"></i>
@@ -1011,101 +1129,47 @@
         </div>
     </div>
 
-    <!-- Modal de pago -->
+    <!-- Modal de pago simple -->
     <div class="payment-modal">
-        <div class="payment-header">
-            <h3>Finalizar Compra</h3>
-            <p>Kéfir Ecuador - Productos Naturales</p>
-            <button class="payment-close">
-                <i class="fas fa-times"></i>
-            </button>
-        </div>
-        <div class="payment-content">
-            <div class="payment-summary">
-                <h4>Resumen de tu pedido</h4>
-                <div id="payment-items">
-                    <!-- Los productos del carrito aparecerán aquí -->
-                </div>
-                <div class="summary-total">
-                    <span>Total:</span>
-                    <span id="payment-total">$0.00</span>
-                </div>
+        <div class="payment-container">
+            <div class="payment-header">
+                <h3>Finalizar Compra</h3>
+                <p>Kéfir Ecuador - Productos Naturales</p>
+                <button class="payment-close">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
-
-            <div class="payment-form">
-                <div class="form-group">
-                    <label for="customer-email">Tu email</label>
-                    <input type="email" id="customer-email" placeholder="Informa tu email para recibir la compra" required>
-                </div>
-                <div class="form-group">
-                    <label for="confirm-email">Confirma tu email</label>
-                    <input type="email" id="confirm-email" placeholder="Confirma tu email" required>
-                </div>
-                <div class="form-group">
-                    <label for="customer-name">Tu nombre completo</label>
-                    <input type="text" id="customer-name" placeholder="Introduce tu nombre completo" required>
-                </div>
-            </div>
-
-            <div class="payment-methods">
-                <h4>Método de pago</h4>
-                
-                <div class="payment-option" data-method="card">
-                    <input type="radio" name="payment-method" id="debit-credit">
-                    <i class="fas fa-credit-card payment-icon"></i>
-                    <label for="debit-credit">Débito / Crédito</label>
-                </div>
-                
-                <div class="payment-option" data-method="paypal">
-                    <input type="radio" name="payment-method" id="paypal">
-                    <i class="fab fa-paypal payment-icon"></i>
-                    <label for="paypal">PayPal</label>
-                </div>
-                
-                <div class="payment-option" data-method="two-cards">
-                    <input type="radio" name="payment-method" id="two-cards">
-                    <i class="fas fa-credit-card payment-icon"></i>
-                    <label for="two-cards">Dos tarjetas</label>
-                </div>
-
-                <div class="two-cards-section" id="two-cards-section">
-                    <h5>Primera tarjeta</h5>
-                    <div class="card-input-group">
-                        <label for="card1-number">Número de la tarjeta</label>
-                        <input type="text" id="card1-number" class="card-input" placeholder="0000 0000 0000 0000">
+            <div class="payment-content">
+                <div class="payment-summary">
+                    <h4>Resumen de tu pedido</h4>
+                    <div id="payment-items">
+                        <!-- Los productos del carrito aparecerán aquí -->
                     </div>
-                    <div class="card-row">
-                        <div class="card-input-group">
-                            <label for="card1-expiry">Fecha de vencimiento</label>
-                            <input type="text" id="card1-expiry" class="card-input" placeholder="MM/AA">
-                        </div>
-                        <div class="card-input-group">
-                            <label for="card1-cvv">CVV</label>
-                            <input type="text" id="card1-cvv" class="card-input" placeholder="123">
-                        </div>
-                    </div>
-                    
-                    <h5 style="margin-top: 15px;">Segunda tarjeta</h5>
-                    <div class="card-input-group">
-                        <label for="card2-number">Número de la tarjeta</label>
-                        <input type="text" id="card2-number" class="card-input" placeholder="0000 0000 0000 0000">
-                    </div>
-                    <div class="card-row">
-                        <div class="card-input-group">
-                            <label for="card2-expiry">Fecha de vencimiento</label>
-                            <input type="text" id="card2-expiry" class="card-input" placeholder="MM/AA">
-                        </div>
-                        <div class="card-input-group">
-                            <label for="card2-cvv">CVV</label>
-                            <input type="text" id="card2-cvv" class="card-input" placeholder="123">
-                        </div>
+                    <div class="summary-total">
+                        <span>Total:</span>
+                        <span id="payment-total">$0.00</span>
                     </div>
                 </div>
-            </div>
 
-            <div class="payment-actions">
-                <button class="btn" id="cancel-payment" style="background-color: #6c757d;">Cancelar</button>
-                <button class="btn" id="confirm-payment">Pagar ahora</button>
+                <div class="payment-form">
+                    <div class="form-group">
+                        <label for="customer-email">Tu email</label>
+                        <input type="email" id="customer-email" placeholder="Informa tu email para recibir la compra" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm-email">Confirma tu email</label>
+                        <input type="email" id="confirm-email" placeholder="Confirma tu email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-name">Tu nombre completo</label>
+                        <input type="text" id="customer-name" placeholder="Introduce tu nombre completo" required>
+                    </div>
+                </div>
+
+                <div class="payment-actions">
+                    <button class="btn" id="cancel-payment" style="background-color: #6c757d;">Cancelar</button>
+                    <button class="btn" id="confirm-payment">Pagar ahora</button>
+                </div>
             </div>
         </div>
     </div>
@@ -1144,466 +1208,483 @@
         <div class="container">
             <div class="section-title">
                 <h2>Nuestros Productos</h2>
-                <p>Ofrecemos búlgaros de leche de la más alta calidad para que prepares tu propio kéfir en casa</p>
-            </div>
-            <div class="products-grid">
-                <div class="product-card">
-                    <div class="product-badge">Más Vendido</div>
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Búlgaros de leche pequeños">
-                    </div>
-                    <div class="product-info">
-                        <h3>Paquete Inicial</h3>
-                        <p>Ideal para comenzar. Incluye búlgaros de leche y guía de preparación en español.</p>
-                        <div class="product-price">$12.00</div>
-                        <button class="btn add-to-cart" data-id="1" data-name="Paquete Inicial" data-price="12.00" data-image="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80">Agregar al Carrito</button>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1579684947554-1e6d0cef76b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Búlgaros de leche medianos">
-                    </div>
-                    <div class="product-info">
-                        <h3>Paquete Familiar</h3>
-                        <p>Para familias. Mayor cantidad de búlgaros para producción continua.</p>
-                        <div class="product-price">$18.00</div>
-                        <button class="btn add-to-cart" data-id="2" data-name="Paquete Familiar" data-price="18.00" data-image="https://images.unsplash.com/photo-1579684947554-1e6d0cef76b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80">Agregar al Carrito</button>
-                    </div>
-                </div>
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Kéfir preparado">
-                    </div>
-                    <div class="product-info">
-                        <h3>Kéfir Listo para Beber</h3>
-                        <p>Kéfir ya fermentado, listo para consumir. Sabores natural, fresa y mora.</p>
-                        <div class="product-price">$5.00 / litro</div>
-                        <button class="btn add-to-cart" data-id="3" data-name="Kéfir Listo para Beber" data-price="5.00" data-image="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80">Agregar al Carrito</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section class="benefits" id="beneficios">
-        <div class="container">
-            <div class="section-title">
-                <h2>Beneficios del Kéfir</h2>
-                <p>Descubre por qué el kéfir es considerado un superalimento para tu salud digestiva y general</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3>Salud Digestiva</h3>
-                    <p>Mejora la flora intestinal y ayuda en la digestión gracias a sus probióticos naturales.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>Sistema Inmunológico</h3>
-                    <p>Fortalece tus defensas naturales contra enfermedades e infecciones.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-bone"></i>
-                    </div>
-                    <h3>Huesos Fuertes</h3>
-                    <p>Rico en calcio y vitamina K2, esenciales para la salud ósea.</p>
-                </div>
-                <div class="benefit-card">
-                    <div class="benefit-icon">
-                        <i class="fas fa-allergies"></i>
-                    </div>
-                    <h3>Reduce Intolerancias</h3>
-                    <p>La fermentación reduce la lactosa, haciéndolo más tolerable para muchos.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonios">
-        <div class="container">
-            <div class="section-title">
-                <h2>Lo que dicen nuestros clientes</h2>
-                <p>Experiencias reales de ecuatorianos que han mejorado su salud con nuestros productos</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        "Llevo 6 meses consumiendo kéfir regularmente y he notado una gran mejora en mi digestión. Los búlgaros que compré en Quito siguen produciendo perfectamente. ¡Excelente producto ecuatoriano!"
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MG</div>
-                        <div class="author-info">
-                            <h4>María González</h4>
-                            <p>Quito, Pichincha</p>
+                <p>Ofrecemos búlgaros de leche de la
+                                    </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-badge">Más Vendido</div>
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Búlgaros de leche pequeños">
+                        </div>
+                        <div class="product-info">
+                            <h3>Paquete Inicial</h3>
+                            <p>Ideal para comenzar. Incluye búlgaros de leche y guía de preparación en español.</p>
+                            <div class="product-price">$12.00</div>
+                            <button class="btn add-to-cart" data-id="1" data-name="Paquete Inicial" data-price="12.00" data-image="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80">Agregar al Carrito</button>
                         </div>
                     </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        "Excelente producto y atención. Me enviaron los búlgaros a Guayaquil y llegaron en perfecto estado. Ahora toda mi familia disfruta del kéfir casero. ¡100% recomendado!"
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">JR</div>
-                        <div class="author-info">
-                            <h4>Javier Rodríguez</h4>
-                            <p>Guayaquil, Guayas</p>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1579684947554-1e6d0cef76b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Búlgaros de leche medianos">
+                        </div>
+                        <div class="product-info">
+                            <h3>Paquete Familiar</h3>
+                            <p>Para familias. Mayor cantidad de búlgaros para producción continua.</p>
+                            <div class="product-price">$18.00</div>
+                            <button class="btn add-to-cart" data-id="2" data-name="Paquete Familiar" data-price="18.00" data-image="https://images.unsplash.com/photo-1579684947554-1e6d0cef76b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80">Agregar al Carrito</button>
                         </div>
                     </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-content">
-                        "Tenía problemas de intolerancia a la lactosa pero con el kéfir puedo disfrutar de los beneficios de los lácteos sin molestias. Lo recomiendo a todos mis amigos en Cuenca."
-                    </div>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">AP</div>
-                        <div class="author-info">
-                            <h4>Ana Pérez</h4>
-                            <p>Cuenca, Azuay</p>
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Kéfir preparado">
+                        </div>
+                        <div class="product-info">
+                            <h3>Kéfir Listo para Beber</h3>
+                            <p>Kéfir ya fermentado, listo para consumir. Sabores natural, fresa y mora.</p>
+                            <div class="product-price">$5.00 / litro</div>
+                            <button class="btn add-to-cart" data-id="3" data-name="Kéfir Listo para Beber" data-price="5.00" data-image="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80">Agregar al Carrito</button>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Sección Envíos -->
-    <section class="delivery" id="delivery">
-        <div class="container">
-            <div class="delivery-content">
-                <div class="delivery-text">
-                    <h2>Envíos a Todo Ecuador</h2>
-                    <p>Realizamos entregas rápidas y seguras en todo el país. ¡Recibe tus búlgaros y kéfir en la puerta de tu casa!</p>
-                    <ul>
-                        <li><i class="fas fa-truck"></i> Quito y Valles: Entrega en 24 horas</li>
-                        <li><i class="fas fa-truck"></i> Guayaquil, Cuenca y principales ciudades: 2-3 días hábiles</li>
-                        <li><i class="fas fa-truck"></i> Resto del país: 3-5 días hábiles</li>
-                    </ul>
-                    <p>Empaque especial para mantener la frescura y calidad del producto.</p>
+        <!-- Benefits Section -->
+        <section class="benefits" id="beneficios">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Beneficios del Kéfir</h2>
+                    <p>Descubre por qué el kéfir es considerado un superalimento para tu salud digestiva y general</p>
                 </div>
-                <div class="delivery-map">
-                    <span><i class="fas fa-map-marker-alt"></i> Ecuador</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Sección Contacto -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2>Contacto</h2>
-            <p>¿Tienes dudas, quieres comprar o necesitas asesoría sobre el kéfir? Escríbenos y te ayudamos.</p>
-            <div class="contact-info">
-                <div class="contact-item">
-                    <span class="contact-icon"><i class="fas fa-envelope"></i></span>
-                    <span>Correo:</span>
-                    <a href="mailto:kefirecuador@gmail.com">kefirecuador@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon"><i class="fab fa-whatsapp"></i></span>
-                    <span>WhatsApp:</span>
-                    <a href="https://wa.me/593993707353" target="_blank">+593 993 707 353</a>
-                </div>
-                <div class="contact-item">
-                    <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
-                    <span>Ubicación:</span>
-                    <span>Quito, Ecuador</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Resto del contenido del sitio web... -->
-
-    <!-- Ícono flotante del carrito -->
-    <div class="cart-icon-floating">
-        <i class="fas fa-shopping-cart"></i>
-        <span class="cart-count">0</span>
-    </div>
-
-    <script>
-        // Variables globales
-        let cart = [];
-        let cartCount = 0;
-        let cartTotal = 0;
-
-        // Elementos del DOM
-        const cartIcon = document.querySelector('.cart-icon-floating');
-        const cartSidebar = document.querySelector('.cart-sidebar');
-        const cartClose = document.querySelector('.cart-close');
-        const cartItems = document.querySelector('.cart-items');
-        const cartCountElement = document.querySelector('.cart-count');
-        const totalPriceElement = document.querySelector('.total-price');
-        const overlay = document.querySelector('.overlay');
-        const addToCartButtons = document.querySelectorAll('.add-to-cart');
-        const checkoutBtn = document.getElementById('checkout-btn');
-        const continueShoppingBtn = document.getElementById('continue-shopping');
-        const paymentModal = document.querySelector('.payment-modal');
-        const paymentClose = document.querySelector('.payment-close');
-        const cancelPaymentBtn = document.getElementById('cancel-payment');
-        const confirmPaymentBtn = document.getElementById('confirm-payment');
-        const paymentItems = document.getElementById('payment-items');
-        const paymentTotal = document.getElementById('payment-total');
-        const paymentOptions = document.querySelectorAll('.payment-option');
-        const twoCardsSection = document.getElementById('two-cards-section');
-
-        // Funciones del carrito
-        function updateCartCount() {
-            cartCount = cart.reduce((total, item) => total + item.quantity, 0);
-            cartCountElement.textContent = cartCount;
-        }
-
-        function updateCartTotal() {
-            cartTotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-            totalPriceElement.textContent = `$${cartTotal.toFixed(2)}`;
-            paymentTotal.textContent = `$${cartTotal.toFixed(2)}`;
-        }
-
-        function renderCartItems() {
-            if (cart.length === 0) {
-                cartItems.innerHTML = `
-                    <div class="cart-empty">
-                        <i class="fas fa-shopping-cart"></i>
-                        <p>Tu carrito está vacío</p>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Salud Digestiva</h3>
+                        <p>Mejora la flora intestinal y ayuda en la digestión gracias a sus probióticos naturales.</p>
                     </div>
-                `;
-                return;
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Sistema Inmunológico</h3>
+                        <p>Fortalece tus defensas naturales contra enfermedades e infecciones.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-bone"></i>
+                        </div>
+                        <h3>Huesos Fuertes</h3>
+                        <p>Rico en calcio y vitamina K2, esenciales para la salud ósea.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-allergies"></i>
+                        </div>
+                        <h3>Reduce Intolerancias</h3>
+                        <p>La fermentación reduce la lactosa, haciéndolo más tolerable para muchos.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials" id="testimonios">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Lo que dicen nuestros clientes</h2>
+                    <p>Experiencias reales de ecuatorianos que han mejorado su salud con nuestros productos</p>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            "Llevo 6 meses consumiendo kéfir regularmente y he notado una gran mejora en mi digestión. Los búlgaros que compré en Quito siguen produciendo perfectamente. ¡Excelente producto ecuatoriano!"
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MG</div>
+                            <div class="author-info">
+                                <h4>María González</h4>
+                                <p>Quito, Pichincha</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            "Excelente producto y atención. Me enviaron los búlgaros a Guayaquil y llegaron en perfecto estado. Ahora toda mi familia disfruta del kéfir casero. ¡100% recomendado!"
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">JR</div>
+                            <div class="author-info">
+                                <h4>Javier Rodríguez</h4>
+                                <p>Guayaquil, Guayas</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            "Tenía problemas de intolerancia a la lactosa pero con el kéfir puedo disfrutar de los beneficios de los lácteos sin molestias. Lo recomiendo a todos mis amigos en Cuenca."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AP</div>
+                            <div class="author-info">
+                                <h4>Ana Pérez</h4>
+                                <p>Cuenca, Azuay</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Envíos -->
+        <section class="delivery" id="delivery">
+            <div class="container">
+                <div class="delivery-content">
+                    <div class="delivery-text">
+                        <h2>Envíos a Todo Ecuador</h2>
+                        <p>Realizamos entregas rápidas y seguras en todo el país. ¡Recibe tus búlgaros y kéfir en la puerta de tu casa!</p>
+                        <ul>
+                            <li><i class="fas fa-truck"></i> Quito y Valles: Entrega en 24 horas</li>
+                            <li><i class="fas fa-truck"></i> Guayaquil, Cuenca y principales ciudades: 2-3 días hábiles</li>
+                            <li><i class="fas fa-truck"></i> Resto del país: 3-5 días hábiles</li>
+                        </ul>
+                        <p>Empaque especial para mantener la frescura y calidad del producto.</p>
+                    </div>
+                    <div class="delivery-map">
+                        <span><i class="fas fa-map-marker-alt"></i> Ecuador</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section class="contact" id="contact">
+            <div class="container">
+                <h2>Contacto</h2>
+                <p>¿Tienes dudas, quieres comprar o necesitas asesoría sobre el kéfir? Escríbenos y te ayudamos.</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                        <span>Correo:</span>
+                        <a href="mailto:kefirecuador@gmail.com">kefirecuador@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fab fa-whatsapp"></i></span>
+                        <span>WhatsApp:</span>
+                        <a href="https://wa.me/593993707353" target="_blank">+593 993 707 353</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <span>Ubicación:</span>
+                        <span>Quito, Ecuador</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-column">
+                        <h3>Kéfir Ecuador</h3>
+                        <p>Productos naturales y artesanales para tu bienestar. Cultivamos búlgaros de leche de la más alta calidad.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Enlaces Rápidos</h3>
+                        <ul class="footer-links">
+                            <li><a href="#inicio">Inicio</a></li>
+                            <li><a href="#productos">Productos</a></li>
+                            <li><a href="#beneficios">Beneficios</a></li>
+                            <li><a href="#testimonios">Testimonios</a></li>
+                            <li><a href="#delivery">Envíos</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h3>Contacto</h3>
+                        <ul class="footer-links">
+                            <li><i class="fas fa-envelope"></i> kefirecuador@gmail.com</li>
+                            <li><i class="fab fa-whatsapp"></i> +593 993 707 353</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Quito, Ecuador</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2023 Kéfir Ecuador. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Ícono flotante del carrito -->
+        <div class="cart-icon-floating">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </div>
+
+        <script>
+            // Variables globales
+            let cart = [];
+            let cartCount = 0;
+            let cartTotal = 0;
+
+            // Elementos del DOM
+            const cartIcon = document.querySelector('.cart-icon-floating');
+            const cartSidebar = document.querySelector('.cart-sidebar');
+            const cartClose = document.querySelector('.cart-close');
+            const cartItems = document.querySelector('.cart-items');
+            const cartCountElement = document.querySelector('.cart-count');
+            const totalPriceElement = document.querySelector('.total-price');
+            const overlay = document.querySelector('.overlay');
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            const checkoutBtn = document.getElementById('checkout-btn');
+            const continueShoppingBtn = document.getElementById('continue-shopping');
+            const paymentModal = document.querySelector('.payment-modal');
+            const paymentClose = document.querySelector('.payment-close');
+            const cancelPaymentBtn = document.getElementById('cancel-payment');
+            const confirmPaymentBtn = document.getElementById('confirm-payment');
+            const paymentItems = document.getElementById('payment-items');
+            const paymentTotal = document.getElementById('payment-total');
+
+            // Funciones del carrito
+            function updateCartCount() {
+                cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+                cartCountElement.textContent = cartCount;
             }
 
-            cartItems.innerHTML = '';
-            cart.forEach(item => {
-                const cartItem = document.createElement('div');
-                cartItem.className = 'cart-item';
-                cartItem.innerHTML = `
-                    <div class="cart-item-image">
-                        <img src="${item.image}" alt="${item.name}">
-                    </div>
-                    <div class="cart-item-details">
-                        <div class="cart-item-name">${item.name}</div>
-                        <div class="cart-item-price">$${item.price.toFixed(2)}</div>
-                        <div class="cart-item-quantity">
-                            <button class="quantity-btn decrease" data-id="${item.id}">-</button>
-                            <input type="text" class="quantity-input" value="${item.quantity}" data-id="${item.id}">
-                            <button class="quantity-btn increase" data-id="${item.id}">+</button>
+            function updateCartTotal() {
+                cartTotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+                totalPriceElement.textContent = `$${cartTotal.toFixed(2)}`;
+                paymentTotal.textContent = `$${cartTotal.toFixed(2)}`;
+            }
+
+            function renderCartItems() {
+                if (cart.length === 0) {
+                    cartItems.innerHTML = `
+                        <div class="cart-empty">
+                            <i class="fas fa-shopping-cart"></i>
+                            <p>Tu carrito está vacío</p>
                         </div>
-                    </div>
-                    <button class="cart-item-remove" data-id="${item.id}">
-                        <i class="fas fa-trash"></i>
-                    </button>
-                `;
-                cartItems.appendChild(cartItem);
-            });
+                    `;
+                    return;
+                }
 
-            // Agregar event listeners a los botones de cantidad y eliminar
-            document.querySelectorAll('.quantity-btn.decrease').forEach(btn => {
-                btn.addEventListener('click', decreaseQuantity);
-            });
-            document.querySelectorAll('.quantity-btn.increase').forEach(btn => {
-                btn.addEventListener('click', increaseQuantity);
-            });
-            document.querySelectorAll('.cart-item-remove').forEach(btn => {
-                btn.addEventListener('click', removeItem);
-            });
-        }
+                cartItems.innerHTML = '';
+                cart.forEach(item => {
+                    const cartItem = document.createElement('div');
+                    cartItem.className = 'cart-item';
+                    cartItem.innerHTML = `
+                        <div class="cart-item-image">
+                            <img src="${item.image}" alt="${item.name}">
+                        </div>
+                        <div class="cart-item-details">
+                            <div class="cart-item-name">${item.name}</div>
+                            <div class="cart-item-price">$${item.price.toFixed(2)}</div>
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn decrease" data-id="${item.id}">-</button>
+                                <input type="text" class="quantity-input" value="${item.quantity}" data-id="${item.id}">
+                                <button class="quantity-btn increase" data-id="${item.id}">+</button>
+                            </div>
+                        </div>
+                        <button class="cart-item-remove" data-id="${item.id}">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    `;
+                    cartItems.appendChild(cartItem);
+                });
 
-        function addToCart(product) {
-            const existingItem = cart.find(item => item.id === product.id);
-            
-            if (existingItem) {
-                existingItem.quantity += 1;
-            } else {
-                cart.push({
-                    id: product.id,
-                    name: product.name,
-                    price: parseFloat(product.price),
-                    image: product.image,
-                    quantity: 1
+                // Agregar event listeners a los botones de cantidad y eliminar
+                document.querySelectorAll('.quantity-btn.decrease').forEach(btn => {
+                    btn.addEventListener('click', decreaseQuantity);
+                });
+                document.querySelectorAll('.quantity-btn.increase').forEach(btn => {
+                    btn.addEventListener('click', increaseQuantity);
+                });
+                document.querySelectorAll('.cart-item-remove').forEach(btn => {
+                    btn.addEventListener('click', removeItem);
                 });
             }
-            
-            updateCartCount();
-            updateCartTotal();
-            renderCartItems();
-        }
 
-        function decreaseQuantity(e) {
-            const id = e.target.dataset.id;
-            const item = cart.find(item => item.id === id);
-            
-            if (item.quantity > 1) {
-                item.quantity -= 1;
-            } else {
-                cart = cart.filter(item => item.id !== id);
+            function addToCart(product) {
+                const existingItem = cart.find(item => item.id === product.id);
+                
+                if (existingItem) {
+                    existingItem.quantity += 1;
+                } else {
+                    cart.push({
+                        id: product.id,
+                        name: product.name,
+                        price: parseFloat(product.price),
+                        image: product.image,
+                        quantity: 1
+                    });
+                }
+                
+                updateCartCount();
+                updateCartTotal();
+                renderCartItems();
             }
-            
-            updateCartCount();
-            updateCartTotal();
-            renderCartItems();
-        }
 
-        function increaseQuantity(e) {
-            const id = e.target.dataset.id;
-            const item = cart.find(item => item.id === id);
-            
-            item.quantity += 1;
-            
-            updateCartCount();
-            updateCartTotal();
-            renderCartItems();
-        }
+            function decreaseQuantity(e) {
+                const id = e.target.dataset.id;
+                const item = cart.find(item => item.id === id);
+                
+                if (item.quantity > 1) {
+                    item.quantity -= 1;
+                } else {
+                    cart = cart.filter(item => item.id !== id);
+                }
+                
+                updateCartCount();
+                updateCartTotal();
+                renderCartItems();
+            }
 
-        function removeItem(e) {
-            const id = e.currentTarget.dataset.id;
-            cart = cart.filter(item => item.id !== id);
-            
-            updateCartCount();
-            updateCartTotal();
-            renderCartItems();
-        }
+            function increaseQuantity(e) {
+                const id = e.target.dataset.id;
+                const item = cart.find(item => item.id === id);
+                
+                item.quantity += 1;
+                
+                updateCartCount();
+                updateCartTotal();
+                renderCartItems();
+            }
 
-        function renderPaymentItems() {
-            paymentItems.innerHTML = '';
-            cart.forEach(item => {
-                const itemTotal = item.price * item.quantity;
-                const summaryItem = document.createElement('div');
-                summaryItem.className = 'summary-item';
-                summaryItem.innerHTML = `
-                    <span>${item.name} x${item.quantity}</span>
-                    <span>$${itemTotal.toFixed(2)}</span>
-                `;
-                paymentItems.appendChild(summaryItem);
+            function removeItem(e) {
+                const id = e.currentTarget.dataset.id;
+                cart = cart.filter(item => item.id !== id);
+                
+                updateCartCount();
+                updateCartTotal();
+                renderCartItems();
+            }
+
+            function renderPaymentItems() {
+                paymentItems.innerHTML = '';
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    const summaryItem = document.createElement('div');
+                    summaryItem.className = 'summary-item';
+                    summaryItem.innerHTML = `
+                        <span>${item.name} x${item.quantity}</span>
+                        <span>$${itemTotal.toFixed(2)}</span>
+                    `;
+                    paymentItems.appendChild(summaryItem);
+                });
+            }
+
+            // Menú móvil
+            const mobileMenu = document.querySelector('.mobile-menu');
+            const navLinks = document.querySelector('.nav-links');
+            mobileMenu.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                overlay.classList.toggle('active');
             });
-        }
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    overlay.classList.remove('active');
+                });
+            });
 
-        // Menú móvil
-        const mobileMenu = document.querySelector('.mobile-menu');
-        const navLinks = document.querySelector('.nav-links');
-        mobileMenu.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            overlay.classList.toggle('active');
-        });
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
+            // Event Listeners
+            cartIcon.addEventListener('click', () => {
+                cartSidebar.classList.add('active');
+                overlay.classList.add('active');
+            });
+
+            cartClose.addEventListener('click', () => {
+                cartSidebar.classList.remove('active');
                 overlay.classList.remove('active');
             });
-        });
 
-        // Event Listeners
-        cartIcon.addEventListener('click', () => {
-            cartSidebar.classList.add('active');
-            overlay.classList.add('active');
-        });
-
-        cartClose.addEventListener('click', () => {
-            cartSidebar.classList.remove('active');
-            overlay.classList.remove('active');
-        });
-
-        overlay.addEventListener('click', () => {
-            cartSidebar.classList.remove('active');
-            paymentModal.classList.remove('active');
-            overlay.classList.remove('active');
-        });
-
-        addToCartButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const product = {
-                    id: button.dataset.id,
-                    name: button.dataset.name,
-                    price: button.dataset.price,
-                    image: button.dataset.image
-                };
-                addToCart(product);
+            overlay.addEventListener('click', () => {
+                cartSidebar.classList.remove('active');
+                paymentModal.classList.remove('active');
+                overlay.classList.remove('active');
             });
-        });
 
-        checkoutBtn.addEventListener('click', () => {
-            if (cart.length === 0) {
-                alert('Tu carrito está vacío');
-                return;
-            }
-            
-            renderPaymentItems();
-            cartSidebar.classList.remove('active');
-            paymentModal.classList.add('active');
-        });
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const product = {
+                        id: button.dataset.id,
+                        name: button.dataset.name,
+                        price: button.dataset.price,
+                        image: button.dataset.image
+                    };
+                    addToCart(product);
+                });
+            });
 
-        continueShoppingBtn.addEventListener('click', () => {
-            cartSidebar.classList.remove('active');
-            overlay.classList.remove('active');
-        });
+            checkoutBtn.addEventListener('click', () => {
+                if (cart.length === 0) {
+                    alert('Tu carrito está vacío');
+                    return;
+                }
+                
+                renderPaymentItems();
+                cartSidebar.classList.remove('active');
+                paymentModal.classList.add('active');
+                overlay.classList.add('active');
+            });
 
-        paymentClose.addEventListener('click', () => {
-            paymentModal.classList.remove('active');
-            overlay.classList.remove('active');
-        });
+            continueShoppingBtn.addEventListener('click', () => {
+                cartSidebar.classList.remove('active');
+                overlay.classList.remove('active');
+            });
 
-        cancelPaymentBtn.addEventListener('click', () => {
-            paymentModal.classList.remove('active');
-            overlay.classList.remove('active');
-        });
+            paymentClose.addEventListener('click', () => {
+                paymentModal.classList.remove('active');
+                overlay.classList.remove('active');
+            });
 
-        confirmPaymentBtn.addEventListener('click', () => {
-            const email = document.getElementById('customer-email').value;
-            const confirmEmail = document.getElementById('confirm-email').value;
-            const name = document.getElementById('customer-name').value;
-            const selectedPayment = document.querySelector('input[name="payment-method"]:checked');
-            
-            // Validaciones básicas
-            if (!email || !confirmEmail || !name) {
-                alert('Por favor completa todos los campos obligatorios');
-                return;
-            }
-            
-            if (email !== confirmEmail) {
-                alert('Los emails no coinciden');
-                return;
-            }
-            
-            if (!selectedPayment) {
-                alert('Por favor selecciona un método de pago');
-                return;
-            }
-            
-            // Aquí normalmente se procesaría el pago
-            alert('¡Pago procesado con éxito! Te contactaremos pronto para coordinar la entrega.');
-            
-            // Limpiar carrito
-            cart = [];
+            cancelPaymentBtn.addEventListener('click', () => {
+                paymentModal.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+
+            confirmPaymentBtn.addEventListener('click', () => {
+                const email = document.getElementById('customer-email').value;
+                const confirmEmail = document.getElementById('confirm-email').value;
+                const name = document.getElementById('customer-name').value;
+                
+                // Validaciones básicas
+                if (!email || !confirmEmail || !name) {
+                    alert('Por favor completa todos los campos obligatorios');
+                    return;
+                }
+                
+                if (email !== confirmEmail) {
+                    alert('Los emails no coinciden');
+                    return;
+                }
+                
+                // Aquí normalmente se procesaría el pago
+                alert('¡Pago procesado con éxito! Te contactaremos pronto para coordinar la entrega.');
+                
+                // Limpiar carrito
+                cart = [];
+                updateCartCount();
+                updateCartTotal();
+                renderCartItems();
+                
+                // Cerrar modales
+                paymentModal.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+
+            // Inicializar
             updateCartCount();
             updateCartTotal();
             renderCartItems();
-            
-            // Cerrar modales
-            paymentModal.classList.remove('active');
-            overlay.classList.remove('active');
-        });
-
-        // Mostrar/ocultar sección de dos tarjetas
-        paymentOptions.forEach(option => {
-            option.addEventListener('click', () => {
-                paymentOptions.forEach(opt => opt.classList.remove('active'));
-                option.classList.add('active');
-                
-                if (option.dataset.method === 'two-cards') {
-                    twoCardsSection.classList.add('active');
-                } else {
-                    twoCardsSection.classList.remove('active');
-                }
-            });
-        });
-
-        // Inicializar
-        updateCartCount();
-        updateCartTotal();
-        renderCartItems();
-    </script>
-</body>
+        </script>
+    </body>
 </html>
+
+    
