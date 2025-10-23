@@ -32,6 +32,7 @@
             line-height: 1.6;
             color: var(--text-color);
             background-color: var(--light-color);
+            overflow-x: hidden;
         }
 
         a {
@@ -61,6 +62,7 @@
             font-weight: 600;
             transition: var(--transition);
             text-align: center;
+            font-size: 1rem;
         }
 
         .btn:hover {
@@ -125,6 +127,7 @@
             max-width: 700px;
             margin: 0 auto;
             color: var(--text-color);
+            font-size: 1.1rem;
         }
 
         /* Header */
@@ -186,6 +189,7 @@
         .nav-links a {
             transition: var(--transition);
             font-weight: 500;
+            font-size: 1.1rem;
         }
 
         .nav-links a:hover {
@@ -243,10 +247,12 @@
         .about-text h2 {
             color: var(--secondary-color);
             margin-bottom: 20px;
+            font-size: 2.2rem;
         }
 
         .about-text p {
             margin-bottom: 15px;
+            font-size: 1.1rem;
         }
 
         .about-image {
@@ -322,6 +328,7 @@
         .product-info h3 {
             color: var(--secondary-color);
             margin-bottom: 10px;
+            font-size: 1.5rem;
         }
 
         .product-price {
@@ -366,6 +373,7 @@
         .benefit-card h3 {
             margin-bottom: 15px;
             color: var(--dark-color);
+            font-size: 1.3rem;
         }
 
         /* Testimonials Section */
@@ -404,6 +412,7 @@
             font-style: italic;
             position: relative;
             z-index: 1;
+            font-size: 1.1rem;
         }
 
         .testimonial-author {
@@ -426,6 +435,7 @@
 
         .author-info h4 {
             margin-bottom: 5px;
+            font-size: 1.1rem;
         }
 
         .author-info p {
@@ -454,6 +464,7 @@
             justify-content: space-between;
             align-items: center;
             font-weight: 600;
+            font-size: 1.1rem;
         }
 
         .faq-answer {
@@ -484,6 +495,11 @@
 
         .delivery-text h2 {
             margin-bottom: 20px;
+            font-size: 2.2rem;
+        }
+
+        .delivery-text p {
+            font-size: 1.1rem;
         }
 
         .delivery-text ul {
@@ -495,6 +511,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            font-size: 1.1rem;
         }
 
         .delivery-map {
@@ -507,6 +524,7 @@
             align-items: center;
             justify-content: center;
             color: var(--text-color);
+            font-size: 1.2rem;
         }
 
         /* Contact Section */
@@ -542,6 +560,7 @@
             flex-direction: column;
             align-items: center;
             gap: 10px;
+            font-size: 1.1rem;
         }
 
         .contact-icon {
@@ -566,6 +585,11 @@
         .footer-column h3 {
             margin-bottom: 20px;
             color: var(--primary-color);
+            font-size: 1.3rem;
+        }
+
+        .footer-column p, .footer-links li {
+            font-size: 1.1rem;
         }
 
         .footer-links li {
@@ -1070,6 +1094,11 @@
             .payment-modal {
                 width: 95%;
             }
+            
+            .btn {
+                font-size: 0.9rem;
+                padding: 10px 20px;
+            }
         }
 
         /* Mejoras para inputs en móviles */
@@ -1146,50 +1175,68 @@
                 padding-top: 15px;
                 font-size: 0.8rem;
             }
-        }
-
-        /* Mejoras generales para pantallas medianas */
-        @media (max-width: 768px) {
-            .container {
-                width: 98%;
-                padding: 0 8px;
+            
+            /* Ajustes de tamaño de fuente para móviles */
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .hero p {
+                font-size: 0.9rem;
             }
             .section-title h2 {
-                font-size: 1.7rem;
-            }
-            .hero h1 {
                 font-size: 1.5rem;
             }
-            .about-content, .delivery-content {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            .section-title p {
+                font-size: 0.9rem;
             }
-            .products-grid, .benefits-grid, .testimonials-grid, .contact-info, .footer-content {
-                grid-template-columns: 1fr;
-                gap: 20px;
+            .about-text h2, .delivery-text h2 {
+                font-size: 1.5rem;
             }
-            .footer-content {
-                margin-bottom: 20px;
+            .about-text p, .delivery-text p, .delivery-text li {
+                font-size: 0.9rem;
             }
-            .footer-bottom {
-                padding-top: 15px;
-                font-size: 0.8rem;
+            .product-info h3 {
+                font-size: 1.2rem;
+            }
+            .product-info p {
+                font-size: 0.9rem;
+            }
+            .benefit-card h3 {
+                font-size: 1.1rem;
+            }
+            .benefit-card p {
+                font-size: 0.9rem;
+            }
+            .testimonial-content {
+                font-size: 0.9rem;
+            }
+            .contact h2 {
+                font-size: 1.8rem;
+            }
+            .contact p, .contact-item {
+                font-size: 0.9rem;
+            }
+            .footer-column h3 {
+                font-size: 1.1rem;
+            }
+            .footer-column p, .footer-links li {
+                font-size: 0.9rem;
             }
         }
 
         @media (max-width: 480px) {
-    .btn-whatsapp {
-        font-size: 2rem;
-        padding: 0;
-        width: 48px;
-        height: 48px;
-        justify-content: center;
-        gap: 0;
-    }
-    .btn-whatsapp span {
-        display: none;
-    }
-}
+            .btn-whatsapp {
+                font-size: 2rem;
+                padding: 0;
+                width: 48px;
+                height: 48px;
+                justify-content: center;
+                gap: 0;
+            }
+            .btn-whatsapp span {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1302,7 +1349,7 @@
     <section class="hero" id="inicio">
         <div class="container">
             <h1>Kéfir & Búlgaros</h1>
-            <p>“Transforma tu día con el poder de los probióticos: productos artesanales hechos con leche pura para tu bienestar y energía natural.”</p>
+            <p>"Transforma tu día con el poder de los probióticos: productos artesanales hechos con leche pura para tu bienestar y energía natural."</p>
             <div class="hero-buttons">
                 <a href="#productos" class="btn">Ver Productos</a>
                 <a href="#beneficios" class="btn" style="background-color: var(--accent-color); color: white;">Conoce los Beneficios</a>
@@ -1332,506 +1379,502 @@
         <div class="container">
             <div class="section-title">
                 <h2>Nuestros Productos</h2>
-                <p>Ofrecemos búlgaros de leche de la
-                                    </div>
-                <div class="products-grid">
-                    <div class="product-card">
-                        <div class="product-badge">Más Vendido</div>
-                        <div class="product-image">
-                            <img src="PAQIN.png" alt="Búlgaros de leche pequeños">
-                        </div>
-                        <div class="product-info">
-                            <h3 style="color:#2E8B57; font-size:1.8em; font-weight:bold; text-transform:uppercase;">
-    🌱 Paquete Inicial
-</h3>
-<p style="font-size:1.1em; color:#333; line-height:1.6;">
-    ✨ <strong>Ideal para comenzar tu cultivo de kéfir</strong>.  
-    Incluye <strong>30 gramos de búlgaros de leche vivos</strong>, listos para fermentar y producir tu propio kéfir natural en casa.  
-    <br><br>
-    🥛 Perfecto para principiantes que desean disfrutar de una bebida probiótica, saludable y llena de vida.
-</p>
-
-                            <div class="product-price">$8.00</div>
-                            <button class="btn add-to-cart" data-id="1" data-name="Paquete Inicial" data-price="12.00" data-image="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80">Agregar al Carrito</button>
-                        </div>
+                <p>Ofrecemos búlgaros de leche de la más alta calidad, cultivados artesanalmente en Ecuador</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-badge">Más Vendido</div>
+                    <div class="product-image">
+                        <img src="PAQIN.png" alt="Búlgaros de leche pequeños">
                     </div>
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="500+BRG.png" alt="Búlgaros de leche medianos">
-                        </div>
-                        <div class="product-info">
-                           <h3 style="color:#2E8B57; font-size:1.8em; font-weight:bold; text-transform:uppercase;">
-    🌿 Paquete Nº 2 – ¡Promoción Especial!
-</h3>
-<p style="font-size:1.1em; color:#333; line-height:1.6;">
-    💥 <strong>500 gramos de kéfir fresco</strong> + <strong>30 gramos de búlgaros de leche vivos</strong> para que prepares tus propias bebidas probióticas desde casa.  
-    <br><br>
-    🧡 ¡Aprovecha esta promoción y disfruta de todos los beneficios del kéfir para tu salud digestiva y bienestar natural!
-</p>
-
-                            <div class="product-price">$18.00</div>
-                            <button class="btn add-to-cart" data-id="2" data-name="Paquete Familiar" data-price="18.00" data-image="https://images.unsplash.com/photo-1579684947554-1e6d0cef76b8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80">Agregar al Carrito</button>
-                        </div>
+                    <div class="product-info">
+                        <h3 style="color:#2E8B57; font-size:1.8em; font-weight:bold; text-transform:uppercase;">
+                            🌱 Paquete Inicial
+                        </h3>
+                        <p style="font-size:1.1em; color:#333; line-height:1.6;">
+                            ✨ <strong>Ideal para comenzar tu cultivo de kéfir</strong>.  
+                            Incluye <strong>30 gramos de búlgaros de leche vivos</strong>, listos para fermentar y producir tu propio kéfir natural en casa.  
+                            <br><br>
+                            🥛 Perfecto para principiantes que desean disfrutar de una bebida probiótica, saludable y llena de vida.
+                        </p>
+                        <div class="product-price">$8.00</div>
+                        <button class="btn add-to-cart" data-id="1" data-name="Paquete Inicial" data-price="8.00" data-image="PAQIN.png">Agregar al Carrito</button>
                     </div>
-                    <div class="product-card">
-                        <div class="product-image">
-                            <img src="NATURAL.png" alt="Kéfir preparado">
-                        </div>
-                        <div class="product-info">
-                            <h3 style="color:#2E8B57; font-size:1.8em; font-weight:bold; text-transform:uppercase;">
-    🍓 Paquete Nº 3 – ¡Kéfir Listo para Beber!
-</h3>
-<p style="font-size:1.1em; color:#333; line-height:1.6;">
-    🥛 <strong>Kéfir ya fermentado y listo para disfrutar</strong>, disponible en deliciosos sabores: <strong>natural, fresa y mora</strong>.  
-    <br><br>
-    💥 <strong>Promoción especial:</strong> <strong>1 litro de kéfir fresco</strong> + <strong>30 gramos de búlgaros de leche vivos</strong> para que continúes fermentando en casa.  
-    <br><br>
-    🌿 Ideal para quienes buscan una bebida probiótica lista para consumir y mantener su salud digestiva al máximo.
-</p>
-
-                            <div class="product-price">$5.00 / litro</div>
-                            <button class="btn add-to-cart" data-id="3" data-name="Kéfir Listo para Beber" data-price="5.00" data-image="https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80">Agregar al Carrito</button>
-                        </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="500+BRG.png" alt="Búlgaros de leche medianos">
+                    </div>
+                    <div class="product-info">
+                        <h3 style="color:#2E8B57; font-size:1.8em; font-weight:bold; text-transform:uppercase;">
+                            🌿 Paquete Nº 2 – ¡Promoción Especial!
+                        </h3>
+                        <p style="font-size:1.1em; color:#333; line-height:1.6;">
+                            💥 <strong>500 gramos de kéfir fresco</strong> + <strong>30 gramos de búlgaros de leche vivos</strong> para que prepares tus propias bebidas probióticas desde casa.  
+                            <br><br>
+                            🧡 ¡Aprovecha esta promoción y disfruta de todos los beneficios del kéfir para tu salud digestiva y bienestar natural!
+                        </p>
+                        <div class="product-price">$18.00</div>
+                        <button class="btn add-to-cart" data-id="2" data-name="Paquete Familiar" data-price="18.00" data-image="500+BRG.png">Agregar al Carrito</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="NATURAL.png" alt="Kéfir preparado">
+                    </div>
+                    <div class="product-info">
+                        <h3 style="color:#2E8B57; font-size:1.8em; font-weight:bold; text-transform:uppercase;">
+                            🍓 Paquete Nº 3 – ¡Kéfir Listo para Beber!
+                        </h3>
+                        <p style="font-size:1.1em; color:#333; line-height:1.6;">
+                            🥛 <strong>Kéfir ya fermentado y listo para disfrutar</strong>, disponible en deliciosos sabores: <strong>natural, fresa y mora</strong>.  
+                            <br><br>
+                            💥 <strong>Promoción especial:</strong> <strong>1 litro de kéfir fresco</strong> + <strong>30 gramos de búlgaros de leche vivos</strong> para que continúes fermentando en casa.  
+                            <br><br>
+                            🌿 Ideal para quienes buscan una bebida probiótica lista para consumir y mantener su salud digestiva al máximo.
+                        </p>
+                        <div class="product-price">$5.00 / litro</div>
+                        <button class="btn add-to-cart" data-id="3" data-name="Kéfir Listo para Beber" data-price="5.00" data-image="NATURAL.png">Agregar al Carrito</button>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <!-- Benefits Section -->
-        <section class="benefits" id="beneficios">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Beneficios del Kéfir</h2>
-                    <p>Descubre por qué el kéfir es considerado un superalimento para tu salud digestiva y general</p>
-                </div>
-                <div class="benefits-grid">
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <h3>Salud Digestiva</h3>
-                        <p>Mejora la flora intestinal y ayuda en la digestión gracias a sus probióticos naturales.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Sistema Inmunológico</h3>
-                        <p>Fortalece tus defensas naturales contra enfermedades e infecciones.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-bone"></i>
-                        </div>
-                        <h3>Huesos Fuertes</h3>
-                        <p>Rico en calcio y vitamina K2, esenciales para la salud ósea.</p>
-                    </div>
-                    <div class="benefit-card">
-                        <div class="benefit-icon">
-                            <i class="fas fa-allergies"></i>
-                        </div>
-                        <h3>Reduce Intolerancias</h3>
-                        <p>La fermentación reduce la lactosa, haciéndolo más tolerable para muchos.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section class="testimonials" id="testimonios">
-            <div class="container">
-                <div class="section-title">
-                    <h2>Lo que dicen nuestros clientes</h2>
-                    <p>Experiencias reales de ecuatorianos que han mejorado su salud con nuestros productos</p>
-                </div>
-                <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            "Llevo 6 meses consumiendo kéfir regularmente y he notado una gran mejora en mi digestión. Los búlgaros que compré en Quito siguen produciendo perfectamente. ¡Excelente producto ecuatoriano!"
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">MG</div>
-                            <div class="author-info">
-                                <h4>María González</h4>
-                                <p>Quito, Pichincha</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            "Excelente producto y atención. Me enviaron los búlgaros a Guayaquil y llegaron en perfecto estado. Ahora toda mi familia disfruta del kéfir casero. ¡100% recomendado!"
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">JR</div>
-                            <div class="author-info">
-                                <h4>Javier Rodríguez</h4>
-                                <p>Guayaquil, Guayas</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="testimonial-content">
-                            "Tenía problemas de intolerancia a la lactosa pero con el kéfir puedo disfrutar de los beneficios de los lácteos sin molestias. Lo recomiendo a todos mis amigos en Cuenca."
-                        </div>
-                        <div class="testimonial-author">
-                            <div class="author-avatar">AP</div>
-                            <div class="author-info">
-                                <h4>Ana Pérez</h4>
-                                <p>Cuenca, Azuay</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección Envíos -->
-        <section class="delivery" id="delivery">
-            <div class="container">
-                <div class="delivery-content">
-                    <div class="delivery-text">
-                        <h2>Envíos a Todo Ecuador</h2>
-                        <p>Realizamos entregas rápidas y seguras en todo el país. ¡Recibe tus búlgaros y kéfir en la puerta de tu casa!</p>
-                        <ul>
-                            <li><i class="fas fa-truck"></i> Quito y Valles: Entrega en 24 horas</li>
-                            <li><i class="fas fa-truck"></i> Guayaquil, Cuenca y principales ciudades: 2-3 días hábiles</li>
-                            <li><i class="fas fa-truck"></i> Resto del país: 3-5 días hábiles</li>
-                        </ul>
-                        <p>Empaque especial para mantener la frescura y calidad del producto.</p>
-                    </div>
-                    <div class="delivery-map">
-                        <span><i class="fas fa-map-marker-alt"></i> Ecuador</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sección Contacto -->
-        <section class="contact" id="contact">
-            <div class="container">
-                <h2>Contacto</h2>
-                <p>¿Tienes dudas, quieres comprar o necesitas asesoría sobre el kéfir? Escríbenos y te ayudamos.</p>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <span class="contact-icon"><i class="fas fa-envelope"></i></span>
-                        <span>Correo:</span>
-                        <a href="mailto:kefirecuador@gmail.com">kefirecuador@gmail.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon"><i class="fab fa-whatsapp"></i></span>
-                        <span>WhatsApp:</span>
-                        <a href="https://wa.me/593993707353" target="_blank">+593 993 707 353</a>
-                    </div>
-                    <div class="contact-item">
-                        <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
-                        <span>Ubicación:</span>
-                        <span>Quito, Ecuador</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-column">
-                        <h3>Kéfir Ecuador</h3>
-                        <p>Productos naturales y artesanales para tu bienestar. Cultivamos búlgaros de leche de la más alta calidad.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-whatsapp"></i></a>
-                        </div>
-                    </div>
-                    <div class="footer-column">
-                        <h3>Enlaces Rápidos</h3>
-                        <ul class="footer-links">
-                            <li><a href="#inicio">Inicio</a></li>
-                            <li><a href="#productos">Productos</a></li>
-                            <li><a href="#beneficios">Beneficios</a></li>
-                            <li><a href="#testimonios">Testimonios</a></li>
-                            <li><a href="#delivery">Envíos</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h3>Contacto</h3>
-                        <ul class="footer-links">
-                            <li><i class="fas fa-envelope"></i> kefirecuador@gmail.com</li>
-                            <li><i class="fab fa-whatsapp"></i> +593 993 707 353</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Quito, Ecuador</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="footer-bottom">
-                    <p>&copy; 2023 Kéfir Ecuador. Todos los derechos reservados.</p>
-                </div>
-            </div>
-        </footer>
-
-        <!-- Ícono flotante del carrito -->
-        <div class="cart-icon-floating">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="cart-count">0</span>
         </div>
+    </section>
 
-        <script>
-            // Variables globales
-            let cart = [];
-            let cartCount = 0;
-            let cartTotal = 0;
+    <!-- Benefits Section -->
+    <section class="benefits" id="beneficios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Beneficios del Kéfir</h2>
+                <p>Descubre por qué el kéfir es considerado un superalimento para tu salud digestiva y general</p>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Salud Digestiva</h3>
+                    <p>Mejora la flora intestinal y ayuda en la digestión gracias a sus probióticos naturales.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Sistema Inmunológico</h3>
+                    <p>Fortalece tus defensas naturales contra enfermedades e infecciones.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-bone"></i>
+                    </div>
+                    <h3>Huesos Fuertes</h3>
+                    <p>Rico en calcio y vitamina K2, esenciales para la salud ósea.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <i class="fas fa-allergies"></i>
+                    </div>
+                    <h3>Reduce Intolerancias</h3>
+                    <p>La fermentación reduce la lactosa, haciéndolo más tolerable para muchos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            // Elementos del DOM
-            const cartIcon = document.querySelector('.cart-icon-floating');
-            const cartSidebar = document.querySelector('.cart-sidebar');
-            const cartClose = document.querySelector('.cart-close');
-            const cartItems = document.querySelector('.cart-items');
-            const cartCountElement = document.querySelector('.cart-count');
-            const totalPriceElement = document.querySelector('.total-price');
-            const overlay = document.querySelector('.overlay');
-            const addToCartButtons = document.querySelectorAll('.add-to-cart');
-            const checkoutBtn = document.getElementById('checkout-btn');
-            const continueShoppingBtn = document.getElementById('continue-shopping');
-            const paymentModal = document.querySelector('.payment-modal');
-            const paymentClose = document.querySelector('.payment-close');
-            const cancelPaymentBtn = document.getElementById('cancel-payment');
-            const confirmPaymentBtn = document.getElementById('confirm-payment');
-            const paymentItems = document.getElementById('payment-items');
-            const paymentTotal = document.getElementById('payment-total');
-
-            // Funciones del carrito
-            function updateCartCount() {
-                cartCount = cart.reduce((total, item) => total + item.quantity, 0);
-                cartCountElement.textContent = cartCount;
-            }
-
-            function updateCartTotal() {
-                cartTotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-                totalPriceElement.textContent = `$${cartTotal.toFixed(2)}`;
-                paymentTotal.textContent = `$${cartTotal.toFixed(2)}`;
-            }
-
-            function renderCartItems() {
-                if (cart.length === 0) {
-                    cartItems.innerHTML = `
-                        <div class="cart-empty">
-                            <i class="fas fa-shopping-cart"></i>
-                            <p>Tu carrito está vacío</p>
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Lo que dicen nuestros clientes</h2>
+                <p>Experiencias reales de ecuatorianos que han mejorado su salud con nuestros productos</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Llevo 6 meses consumiendo kéfir regularmente y he notado una gran mejora en mi digestión. Los búlgaros que compré en Quito siguen produciendo perfectamente. ¡Excelente producto ecuatoriano!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MG</div>
+                        <div class="author-info">
+                            <h4>María González</h4>
+                            <p>Quito, Pichincha</p>
                         </div>
-                    `;
-                    return;
-                }
-
-                cartItems.innerHTML = '';
-                cart.forEach(item => {
-                    const cartItem = document.createElement('div');
-                    cartItem.className = 'cart-item';
-                    cartItem.innerHTML = `
-                        <div class="cart-item-image">
-                            <img src="${item.image}" alt="${item.name}">
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Excelente producto y atención. Me enviaron los búlgaros a Guayaquil y llegaron en perfecto estado. Ahora toda mi familia disfruta del kéfir casero. ¡100% recomendado!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JR</div>
+                        <div class="author-info">
+                            <h4>Javier Rodríguez</h4>
+                            <p>Guayaquil, Guayas</p>
                         </div>
-                        <div class="cart-item-details">
-                            <div class="cart-item-name">${item.name}</div>
-                            <div class="cart-item-price">$${item.price.toFixed(2)}</div>
-                            <div class="cart-item-quantity">
-                                <button class="quantity-btn decrease" data-id="${item.id}">-</button>
-                                <input type="text" class="quantity-input" value="${item.quantity}" data-id="${item.id}">
-                                <button class="quantity-btn increase" data-id="${item.id}">+</button>
-                            </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        "Tenía problemas de intolerancia a la lactosa pero con el kéfir puedo disfrutar de los beneficios de los lácteos sin molestias. Lo recomiendo a todos mis amigos en Cuenca."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">AP</div>
+                        <div class="author-info">
+                            <h4>Ana Pérez</h4>
+                            <p>Cuenca, Azuay</p>
                         </div>
-                        <button class="cart-item-remove" data-id="${item.id}">
-                            <i class="fas fa-trash"></i>
-                        </button>
-                    `;
-                    cartItems.appendChild(cartItem);
-                });
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                // Agregar event listeners a los botones de cantidad y eliminar
-                document.querySelectorAll('.quantity-btn.decrease').forEach(btn => {
-                    btn.addEventListener('click', decreaseQuantity);
-                });
-                document.querySelectorAll('.quantity-btn.increase').forEach(btn => {
-                    btn.addEventListener('click', increaseQuantity);
-                });
-                document.querySelectorAll('.cart-item-remove').forEach(btn => {
-                    btn.addEventListener('click', removeItem);
-                });
+    <!-- Sección Envíos -->
+    <section class="delivery" id="delivery">
+        <div class="container">
+            <div class="delivery-content">
+                <div class="delivery-text">
+                    <h2>Envíos a Todo Ecuador</h2>
+                    <p>Realizamos entregas rápidas y seguras en todo el país. ¡Recibe tus búlgaros y kéfir en la puerta de tu casa!</p>
+                    <ul>
+                        <li><i class="fas fa-truck"></i> Quito y Valles: Entrega en 24 horas</li>
+                        <li><i class="fas fa-truck"></i> Guayaquil, Cuenca y principales ciudades: 2-3 días hábiles</li>
+                        <li><i class="fas fa-truck"></i> Resto del país: 3-5 días hábiles</li>
+                    </ul>
+                    <p>Empaque especial para mantener la frescura y calidad del producto.</p>
+                </div>
+                <div class="delivery-map">
+                    <span><i class="fas fa-map-marker-alt"></i> Ecuador</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Contacto</h2>
+            <p>¿Tienes dudas, quieres comprar o necesitas asesoría sobre el kéfir? Escríbenos y te ayudamos.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                    <span>Correo:</span>
+                    <a href="mailto:kefirecuador@gmail.com">kefirecuador@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon"><i class="fab fa-whatsapp"></i></span>
+                    <span>WhatsApp:</span>
+                    <a href="https://wa.me/593993707353" target="_blank">+593 993 707 353</a>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                    <span>Ubicación:</span>
+                    <span>Quito, Ecuador</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Kéfir Ecuador</h3>
+                    <p>Productos naturales y artesanales para tu bienestar. Cultivamos búlgaros de leche de la más alta calidad.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#beneficios">Beneficios</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                        <li><a href="#delivery">Envíos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> kefirecuador@gmail.com</li>
+                        <li><i class="fab fa-whatsapp"></i> +593 993 707 353</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Quito, Ecuador</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Kéfir Ecuador. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Ícono flotante del carrito -->
+    <div class="cart-icon-floating">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+    </div>
+
+    <script>
+        // Variables globales
+        let cart = [];
+        let cartCount = 0;
+        let cartTotal = 0;
+
+        // Elementos del DOM
+        const cartIcon = document.querySelector('.cart-icon-floating');
+        const cartSidebar = document.querySelector('.cart-sidebar');
+        const cartClose = document.querySelector('.cart-close');
+        const cartItems = document.querySelector('.cart-items');
+        const cartCountElement = document.querySelector('.cart-count');
+        const totalPriceElement = document.querySelector('.total-price');
+        const overlay = document.querySelector('.overlay');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const checkoutBtn = document.getElementById('checkout-btn');
+        const continueShoppingBtn = document.getElementById('continue-shopping');
+        const paymentModal = document.querySelector('.payment-modal');
+        const paymentClose = document.querySelector('.payment-close');
+        const cancelPaymentBtn = document.getElementById('cancel-payment');
+        const confirmPaymentBtn = document.getElementById('confirm-payment');
+        const paymentItems = document.getElementById('payment-items');
+        const paymentTotal = document.getElementById('payment-total');
+
+        // Funciones del carrito
+        function updateCartCount() {
+            cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCountElement.textContent = cartCount;
+        }
+
+        function updateCartTotal() {
+            cartTotal = cart.reduce((total, item) => total + (item.price * item.quantity), 0);
+            totalPriceElement.textContent = `$${cartTotal.toFixed(2)}`;
+            paymentTotal.textContent = `$${cartTotal.toFixed(2)}`;
+        }
+
+        function renderCartItems() {
+            if (cart.length === 0) {
+                cartItems.innerHTML = `
+                    <div class="cart-empty">
+                        <i class="fas fa-shopping-cart"></i>
+                        <p>Tu carrito está vacío</p>
+                    </div>
+                `;
+                return;
             }
 
-            function addToCart(product) {
-                const existingItem = cart.find(item => item.id === product.id);
-                
-                if (existingItem) {
-                    existingItem.quantity += 1;
-                } else {
-                    cart.push({
-                        id: product.id,
-                        name: product.name,
-                        price: parseFloat(product.price),
-                        image: product.image,
-                        quantity: 1
-                    });
-                }
-                
-                updateCartCount();
-                updateCartTotal();
-                renderCartItems();
-            }
+            cartItems.innerHTML = '';
+            cart.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+                cartItem.innerHTML = `
+                    <div class="cart-item-image">
+                        <img src="${item.image}" alt="${item.name}">
+                    </div>
+                    <div class="cart-item-details">
+                        <div class="cart-item-name">${item.name}</div>
+                        <div class="cart-item-price">$${item.price.toFixed(2)}</div>
+                        <div class="cart-item-quantity">
+                            <button class="quantity-btn decrease" data-id="${item.id}">-</button>
+                            <input type="text" class="quantity-input" value="${item.quantity}" data-id="${item.id}">
+                            <button class="quantity-btn increase" data-id="${item.id}">+</button>
+                        </div>
+                    </div>
+                    <button class="cart-item-remove" data-id="${item.id}">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                `;
+                cartItems.appendChild(cartItem);
+            });
 
-            function decreaseQuantity(e) {
-                const id = e.target.dataset.id;
-                const item = cart.find(item => item.id === id);
-                
-                if (item.quantity > 1) {
-                    item.quantity -= 1;
-                } else {
-                    cart = cart.filter(item => item.id !== id);
-                }
-                
-                updateCartCount();
-                updateCartTotal();
-                renderCartItems();
-            }
+            // Agregar event listeners a los botones de cantidad y eliminar
+            document.querySelectorAll('.quantity-btn.decrease').forEach(btn => {
+                btn.addEventListener('click', decreaseQuantity);
+            });
+            document.querySelectorAll('.quantity-btn.increase').forEach(btn => {
+                btn.addEventListener('click', increaseQuantity);
+            });
+            document.querySelectorAll('.cart-item-remove').forEach(btn => {
+                btn.addEventListener('click', removeItem);
+            });
+        }
 
-            function increaseQuantity(e) {
-                const id = e.target.dataset.id;
-                const item = cart.find(item => item.id === id);
-                
-                item.quantity += 1;
-                
-                updateCartCount();
-                updateCartTotal();
-                renderCartItems();
-            }
-
-            function removeItem(e) {
-                const id = e.currentTarget.dataset.id;
-                cart = cart.filter(item => item.id !== id);
-                
-                updateCartCount();
-                updateCartTotal();
-                renderCartItems();
-            }
-
-            function renderPaymentItems() {
-                paymentItems.innerHTML = '';
-                cart.forEach(item => {
-                    const itemTotal = item.price * item.quantity;
-                    const summaryItem = document.createElement('div');
-                    summaryItem.className = 'summary-item';
-                    summaryItem.innerHTML = `
-                        <span>${item.name} x${item.quantity}</span>
-                        <span>$${itemTotal.toFixed(2)}</span>
-                    `;
-                    paymentItems.appendChild(summaryItem);
+        function addToCart(product) {
+            const existingItem = cart.find(item => item.id === product.id);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: parseFloat(product.price),
+                    image: product.image,
+                    quantity: 1
                 });
             }
-
-            // Menú móvil
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const navLinks = document.querySelector('.nav-links');
-            mobileMenu.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                overlay.classList.toggle('active');
-            });
-            navLinks.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    overlay.classList.remove('active');
-                });
-            });
-
-            // Event Listeners
-            cartIcon.addEventListener('click', () => {
-                cartSidebar.classList.add('active');
-                overlay.classList.add('active');
-            });
-
-            cartClose.addEventListener('click', () => {
-                cartSidebar.classList.remove('active');
-                overlay.classList.remove('active');
-            });
-
-            overlay.addEventListener('click', () => {
-                cartSidebar.classList.remove('active');
-                paymentModal.classList.remove('active');
-                overlay.classList.remove('active');
-            });
-
-            addToCartButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const product = {
-                        id: button.dataset.id,
-                        name: button.dataset.name,
-                        price: button.dataset.price,
-                        image: button.dataset.image
-                    };
-                    addToCart(product);
-                });
-            });
-
-            checkoutBtn.addEventListener('click', () => {
-                if (cart.length === 0) {
-                    alert('Tu carrito está vacío');
-                    return;
-                }
-                
-                renderPaymentItems();
-                cartSidebar.classList.remove('active');
-                paymentModal.classList.add('active');
-                overlay.classList.add('active');
-            });
-
-            continueShoppingBtn.addEventListener('click', () => {
-                cartSidebar.classList.remove('active');
-                overlay.classList.remove('active');
-            });
-
-            paymentClose.addEventListener('click', () => {
-                paymentModal.classList.remove('active');
-                overlay.classList.remove('active');
-            });
-
-            cancelPaymentBtn.addEventListener('click', () => {
-                paymentModal.classList.remove('active');
-                overlay.classList.remove('active');
-            });
-
-            confirmPaymentBtn.addEventListener('click', () => {
-                const email = document.getElementById('customer-email').value;
-                const confirmEmail = document.getElementById('confirm-email').value;
-                const name = document.getElementById('customer-name').value;
-                
-                // Validaciones básicas
-                if (!email || !confirmEmail || !name) {
-                    alert('Por favor completa todos los campos obligatorios');
-                    return;
-                }
-                
-                if (email !== confirmEmail) {
-                    alert('Los emails no coinciden');
-                    return;
-                }
-                
-                // Aquí normalmente se procesaría el pago
-                alert('¡Pago procesado con éxito! Te contactaremos pronto para coordinar la entrega.');
-                
-                // Limpiar carrito
-                cart = [];
-                updateCartCount();
-                updateCartTotal();
-                renderCartItems();
-                
-                // Cerrar modales
-                paymentModal.classList.remove('active');
-                overlay.classList.remove('active');
-            });
-
-            // Inicializar
+            
             updateCartCount();
             updateCartTotal();
             renderCartItems();
-        </script>
-    </body>
-</html>
+        }
 
+        function decreaseQuantity(e) {
+            const id = e.target.dataset.id;
+            const item = cart.find(item => item.id === id);
+            
+            if (item.quantity > 1) {
+                item.quantity -= 1;
+            } else {
+                cart = cart.filter(item => item.id !== id);
+            }
+            
+            updateCartCount();
+            updateCartTotal();
+            renderCartItems();
+        }
+
+        function increaseQuantity(e) {
+            const id = e.target.dataset.id;
+            const item = cart.find(item => item.id === id);
+            
+            item.quantity += 1;
+            
+            updateCartCount();
+            updateCartTotal();
+            renderCartItems();
+        }
+
+        function removeItem(e) {
+            const id = e.currentTarget.dataset.id;
+            cart = cart.filter(item => item.id !== id);
+            
+            updateCartCount();
+            updateCartTotal();
+            renderCartItems();
+        }
+
+        function renderPaymentItems() {
+            paymentItems.innerHTML = '';
+            cart.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                const summaryItem = document.createElement('div');
+                summaryItem.className = 'summary-item';
+                summaryItem.innerHTML = `
+                    <span>${item.name} x${item.quantity}</span>
+                    <span>$${itemTotal.toFixed(2)}</span>
+                `;
+                paymentItems.appendChild(summaryItem);
+            });
+        }
+
+        // Menú móvil
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            overlay.classList.toggle('active');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                overlay.classList.remove('active');
+            });
+        });
+
+        // Event Listeners
+        cartIcon.addEventListener('click', () => {
+            cartSidebar.classList.add('active');
+            overlay.classList.add('active');
+        });
+
+        cartClose.addEventListener('click', () => {
+            cartSidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        overlay.addEventListener('click', () => {
+            cartSidebar.classList.remove('active');
+            paymentModal.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        addToCartButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const product = {
+                    id: button.dataset.id,
+                    name: button.dataset.name,
+                    price: button.dataset.price,
+                    image: button.dataset.image
+                };
+                addToCart(product);
+            });
+        });
+
+        checkoutBtn.addEventListener('click', () => {
+            if (cart.length === 0) {
+                alert('Tu carrito está vacío');
+                return;
+            }
+            
+            renderPaymentItems();
+            cartSidebar.classList.remove('active');
+            paymentModal.classList.add('active');
+            overlay.classList.add('active');
+        });
+
+        continueShoppingBtn.addEventListener('click', () => {
+            cartSidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        paymentClose.addEventListener('click', () => {
+            paymentModal.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        cancelPaymentBtn.addEventListener('click', () => {
+            paymentModal.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        confirmPaymentBtn.addEventListener('click', () => {
+            const email = document.getElementById('customer-email').value;
+            const confirmEmail = document.getElementById('confirm-email').value;
+            const name = document.getElementById('customer-name').value;
+            
+            // Validaciones básicas
+            if (!email || !confirmEmail || !name) {
+                alert('Por favor completa todos los campos obligatorios');
+                return;
+            }
+            
+            if (email !== confirmEmail) {
+                alert('Los emails no coinciden');
+                return;
+            }
+            
+            // Aquí normalmente se procesaría el pago
+            alert('¡Pago procesado con éxito! Te contactaremos pronto para coordinar la entrega.');
+            
+            // Limpiar carrito
+            cart = [];
+            updateCartCount();
+            updateCartTotal();
+            renderCartItems();
+            
+            // Cerrar modales
+            paymentModal.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        // Inicializar
+        updateCartCount();
+        updateCartTotal();
+        renderCartItems();
+    </script>
+</body>
+</html>
